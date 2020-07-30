@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/rahul-fabled2020.github.io/todo-app/static/css/main.6083c360.chunk.css",
+    "main.js": "/rahul-fabled2020.github.io/todo-app/static/js/main.06f4329f.chunk.js",
+    "main.js.map": "/rahul-fabled2020.github.io/todo-app/static/js/main.06f4329f.chunk.js.map",
+    "runtime-main.js": "/rahul-fabled2020.github.io/todo-app/static/js/runtime-main.85a5b680.js",
+    "runtime-main.js.map": "/rahul-fabled2020.github.io/todo-app/static/js/runtime-main.85a5b680.js.map",
+    "static/js/2.2fbfe81a.chunk.js": "/rahul-fabled2020.github.io/todo-app/static/js/2.2fbfe81a.chunk.js",
+    "static/js/2.2fbfe81a.chunk.js.map": "/rahul-fabled2020.github.io/todo-app/static/js/2.2fbfe81a.chunk.js.map",
+    "index.html": "/rahul-fabled2020.github.io/todo-app/index.html",
+    "precache-manifest.bdfd187ea8f9d4391bc13f73b29619b5.js": "/rahul-fabled2020.github.io/todo-app/precache-manifest.bdfd187ea8f9d4391bc13f73b29619b5.js",
+    "service-worker.js": "/rahul-fabled2020.github.io/todo-app/service-worker.js",
+    "static/css/main.6083c360.chunk.css.map": "/rahul-fabled2020.github.io/todo-app/static/css/main.6083c360.chunk.css.map",
+    "static/js/2.2fbfe81a.chunk.js.LICENSE.txt": "/rahul-fabled2020.github.io/todo-app/static/js/2.2fbfe81a.chunk.js.LICENSE.txt",
+    "static/media/all.css": "/rahul-fabled2020.github.io/todo-app/static/media/fa-solid-900.bea989e8.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.85a5b680.js",
+    "static/js/2.2fbfe81a.chunk.js",
+    "static/css/main.6083c360.chunk.css",
+    "static/js/main.06f4329f.chunk.js"
+  ]
+}
