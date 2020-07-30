@@ -18,7 +18,8 @@ function filterList(props, listObject, index) {
       listObject={listObject}
       index={index}
       onCheckItem={props.onCheckItem}
-      handleDeleteItem = {props.handleDeleteItem}
+      handleDeleteItem={props.handleDeleteItem}
+      searchText={props.searchText}
     />
   );
   switch (props.visibility) {

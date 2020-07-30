@@ -1,8 +1,12 @@
 import React from "react";
 
 function TodoListItem(props) {
-  const {listObject, index} = props;
+  const {listObject, index, searchText} = props;
   
+  if(searchText && listObject.details.toLowerCase().indexOf(searchText.toLowerCase())===-1) {
+    return null;
+  }
+
   return (
     <li
       className={"todo-list__item" + (listObject.isCompleted ? " strike" : "")}

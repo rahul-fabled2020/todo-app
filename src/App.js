@@ -11,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       todoList: [],
+      searchText: "",
     };
   }
 
@@ -19,7 +20,7 @@ class App extends React.Component {
       const json = window.localStorage.getItem("todoList");
       const todoList = JSON.parse(json);
 
-      if(todoList) {
+      if (todoList) {
         this.setState(() => ({ todoList }));
       }
     } catch (e) {
@@ -28,9 +29,14 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-      const json = JSON.stringify(this.state.todoList);
-      window.localStorage.setItem("todoList", json);    
+    const json = JSON.stringify(this.state.todoList);
+    window.localStorage.setItem("todoList", json);
   }
+
+  updateSearchText = (e) => {
+    const searchText = e.target.value.trim();
+    this.setState(() => ({ searchText: searchText }));
+  };
 
   search(text, myArray) {
     for (let i = 0; i < myArray.length; i++) {
@@ -70,7 +76,7 @@ class App extends React.Component {
   handleDeleteItem = (e, index) => {
     e.preventDefault();
 
-    if(!window.confirm("Are you sure to delete?")) return;
+    if (!window.confirm("Are you sure to delete?")) return;
 
     this.setState((prevState) => ({
       todoList: [
@@ -81,7 +87,7 @@ class App extends React.Component {
   };
 
   handleDeleteAll = (e) => {
-    if(!window.confirm("Are you sure to delete?")) return;
+    if (!window.confirm("Are you sure to delete?")) return;
 
     this.setState((prevState) => ({
       todoList: prevState.todoList.filter(
@@ -96,6 +102,15 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1 className="app__heading">#todo App</h1>
+        <div className="app__search-wrapper">
+          <input
+            className="app__search"
+            type="text"
+            name="search"
+            onInput={this.updateSearchText}
+            placeholder = "Search"
+          />
+        </div>
         <Tabs>
           <div label={labels.all}>
             <TodoForm handleAddItem={this.handleAddItem} />
@@ -104,6 +119,7 @@ class App extends React.Component {
               onCheckItem={this.onCheckItem}
               visibility={labels.all}
               labels={labels}
+              searchText={this.state.searchText}
             />
           </div>
           <div label={labels.active}>
@@ -113,6 +129,7 @@ class App extends React.Component {
               onCheckItem={this.onCheckItem}
               visibility={labels.active}
               labels={labels}
+              searchText={this.state.searchText}
             />
           </div>
           <div label={labels.completed}>
@@ -122,6 +139,7 @@ class App extends React.Component {
               visibility={labels.completed}
               labels={labels}
               handleDeleteItem={this.handleDeleteItem}
+              searchText={this.state.searchText}
             />
             <div className="app__btn-wrapper">
               <button onClick={this.handleDeleteAll} className="app__button">
