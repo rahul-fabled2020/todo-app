@@ -98,6 +98,12 @@ class App extends React.Component {
 
   render() {
     const labels = { all: "All", active: "Active", completed: "Completed" };
+    const todoListProps = {
+      todoList: this.state.todoList,
+      onCheckItem: this.onCheckItem,
+      labels: labels,
+      searchText: this.state.searchText,
+    }
 
     return (
       <div className="app">
@@ -115,31 +121,22 @@ class App extends React.Component {
           <div label={labels.all}>
             <TodoForm handleAddItem={this.handleAddItem} />
             <TodoList
-              todoList={this.state.todoList}
-              onCheckItem={this.onCheckItem}
+              {...todoListProps}
               visibility={labels.all}
-              labels={labels}
-              searchText={this.state.searchText}
             />
           </div>
           <div label={labels.active}>
             <TodoForm handleAddItem={this.handleAddItem} />
             <TodoList
-              todoList={this.state.todoList}
-              onCheckItem={this.onCheckItem}
+              {...todoListProps}
               visibility={labels.active}
-              labels={labels}
-              searchText={this.state.searchText}
             />
           </div>
           <div label={labels.completed}>
             <TodoList
-              todoList={this.state.todoList}
-              onCheckItem={this.onCheckItem}
+              {...todoListProps}
               visibility={labels.completed}
-              labels={labels}
               handleDeleteItem={this.handleDeleteItem}
-              searchText={this.state.searchText}
             />
             <div className="app__btn-wrapper">
               <button onClick={this.handleDeleteAll} className="app__button">
